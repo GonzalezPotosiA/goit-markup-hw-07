@@ -583,15 +583,22 @@ $--font-main: 'Roboto';
     border-radius: 4px;
     outline: none;
 
-    &:focus{
+    &:focus {
         border: 1px solid $--blue-color;
-        fill: $--blue-color;
+        
     }
+
+
     &:hover{
         outline: none;
         border: 1px solid $--blue-color;
     }
+
+    &:focus + .form_svg.input{
+        fill: $--blue-color;
+    }
 }
+
 
 .form_comentaries{
     font-family: $--font-main;
