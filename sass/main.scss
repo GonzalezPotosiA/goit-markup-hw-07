@@ -1,12 +1,16 @@
-@import './utils/variables.scss';
-@import './utils/templates.scss';
-@import './components/header.scss';
-@import './components/footer.scss';
+@import './utils/variables';
+@import './utils/templates';
+@import './utils/mixins';
+@import './components/header';
+@import './components/footer';
+
 
 /*Elemento contenedor*/
 
 .container__main {
-    width: 1600px;
+
+    @include select_measures(1600px, none);
+    // width: 1600px;
     margin: 0 auto;
     padding: 0 15px;
     font-family: $--font-main;
@@ -16,7 +20,7 @@
 /* clase auxiliar */
 
 .container{
-    width: 1200px;
+    @include select_measures(1200px, none);
     margin:0 auto;
 }
 
@@ -44,8 +48,7 @@
 .link{
     margin: 10px;
     &:hover{
-        color: $--blue-color;
-        fill: $--blue-color;
+        @include select_colors(none,$--blue-color ,$--blue-color);
     }
 
 }
@@ -60,9 +63,6 @@
     color: $--black-color;
     margin: 0;
 }
-
-
-
 /*Clases del main*/
 
 .main{
@@ -86,11 +86,9 @@
     }
 
     &__button{
-        font-family: $--font-main;
-        width: 197px;    
-        color: $--white-color;
-        background-color: $--blue-color;
-        fill: $--white-color;
+        font-family: $--font-main;   
+        @include select_colors($--blue-color,$--white-color,$--white-color);
+        @include select_measures(197px, none);
         border-radius: 4px;
         margin: 0% 1%;
         cursor: pointer;
@@ -101,9 +99,10 @@
         
 
         &:hover{
-            color: $--black-color;
-            background-color: $--white-color;
-            fill: $--black-color;
+            @include select_colors($--white-color,$--black-color ,$--black-color);
+            // color: $--black-color;
+            // background-color: $--white-color;
+            // fill: $--black-color;
         }
     }
 }
@@ -123,19 +122,18 @@
     }
 
     &__paragraph{
-        width: 270px;
+        @include select_measures(270px, none);
+    
     }
 
     &__img{
-        width:270px;
-        height:120px;
+        @include select_measures(270px, 120px);
         text-align: center;
         background-color: $--white-color;
     }
 
     &__icon{
-        width:65.32px;
-        height:120px;
+        @include select_measures(65.32px, 120px);
         text-align: center;
 
         &:hover{
@@ -164,15 +162,16 @@
 .images{
     &__container{
         position: relative; 
+        @include select_measures(370px, 294px);
     }
     &__tecnology{
-        width: 370px;
-        height: 294px;
+        object-fit: cover;
     }
     &__text{
+
+        @include select_measures(100%, none);
         position: absolute;
-        bottom: 4px;
-        width: 100%;
+        bottom: 0px;
         text-align: center;
         text-transform: uppercase;
         margin: 0;
@@ -195,14 +194,16 @@
         flex-wrap: wrap;
         padding-top: 5%;
     }
-    &__person{
+    &__features{
         border: rgba(162, 170, 166, 0.658) solid 1px;
         border-radius: 0px 0px 4px 4px;
         margin: 5px;
         box-shadow: 0px 4px 1px 1px rgba(0, 0, 0, 0.2); 
     }
+    
     &__image{
-        width: 270px;
+        @include select_measures(270px, none);
+        
     }
     &__title{
         text-align: center;
@@ -226,25 +227,23 @@
 .network{
     &__base{
         fill: $--gray-clor;
-        // buscar hacer una funcion 
         width: 44px;
         text-align: center;
         padding: 5%;
 
         &:hover{
-            fill: $--white-color;
-            background-color: $--blue-color;
+            @include select_colors($--blue-color,$--white-color,none);
             border-radius: 50%;
         }
     }
     &__icon{
-        width: 20px;
-        height: 20px;
+
+        @include select_measures(20px, 20px);
     }
 }
 
 .footer__base{
-    width: 44px;
+    @include select_measures(44px, 44px);
     text-align: center;
     padding: 5%;
 }
@@ -258,10 +257,9 @@
         padding: 5% 0%;
     }
     &__box{
+        @include select_measures(170px, 81px);
         border: 1px solid #AFB1B8;
         fill: $--gray-clor;
-        width: 170px;
-        height: 81px;
         text-align: center;
         border-radius: 4px;
         margin: 1%;
@@ -272,8 +270,7 @@
         }
     }
     &__svg{
-        width: 100px;
-        height: 81px;
+        @include select_measures(100px, 81px);
     }
 }
 
@@ -301,8 +298,9 @@
         cursor: pointer;   
         
         &:hover{
-            color: $--white-color;
-            background-color: $--blue-color;
+            @include select_colors($--blue-color, none , $--white-color);
+            // color: $--white-color;
+            // background-color: $--blue-color;
             box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
         }
     }
@@ -330,12 +328,12 @@
         position: relative;
     }
     &--img{
-        width: 100%;
+        @include select_measures(100%, none);
         border-radius: 0px 0px 4px 4px ;
     }
     &__text{
+        @include select_measures(100%, none);
         position: absolute;
-        width: 100%;
         top: 1px;
         color: $--white-color;
         display: flex;
@@ -370,11 +368,11 @@
 }
 
 .box--hidden{
-    height: 298.3px;
+    @include select_measures(none, 298.3px);
 }
 
 .paragraph--hidden{
-    height: 298px;
+    @include select_measures(none, 298px);
     background: rgba(33, 150, 243, 0.9);
     padding:30% 10%;
     margin: 0%;
@@ -429,9 +427,7 @@
         }
     }
     &_svg{
-        width: 12px;
-        height: 12px; 
-        
+        @include select_measures(12px, 12px);
     }
     &_title{
         font-size: 20px;
@@ -460,8 +456,7 @@
     left: 4%;
 }
 .form_input{
-    height: 40px;
-    width: 100%;
+    @include select_measures(100%, 40px);
     cursor: pointer;
     padding: 2% 2% 2% 7%;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -510,12 +505,11 @@
 }
 
 .form_submit{
+    @include select_measures(200px, 50px);
     background: #188CE8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
-    width: 200px;
-    height: 50px;
     margin: auto;
     color: $--white-color;
     font-family: $--font-main;

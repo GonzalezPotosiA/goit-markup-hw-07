@@ -109,6 +109,7 @@
 /*Elemento contenedor*/
 .container__main {
   width: 1600px;
+  height: none;
   margin: 0 auto;
   padding: 0 15px;
   font-family: "Roboto";
@@ -118,6 +119,7 @@
 /* clase auxiliar */
 .container {
   width: 1200px;
+  height: none;
   margin: 0 auto;
 }
 
@@ -142,8 +144,9 @@
   margin: 10px;
 }
 .link:hover {
-  color: #2196F3;
+  background-color: none;
   fill: #2196F3;
+  color: #2196F3;
 }
 
 /* Subtitulos de secciones */
@@ -175,10 +178,11 @@
 }
 .main__button {
   font-family: "Roboto";
-  width: 197px;
-  color: #F5F4FA;
   background-color: #2196F3;
   fill: #F5F4FA;
+  color: #F5F4FA;
+  width: 197px;
+  height: none;
   border-radius: 4px;
   margin: 0% 1%;
   cursor: pointer;
@@ -188,9 +192,9 @@
   border: rgba(162, 170, 166, 0.658) solid 2px;
 }
 .main__button:hover {
-  color: #212121;
   background-color: #F5F4FA;
   fill: #212121;
+  color: #212121;
 }
 
 /* Main - Clases de ventajas */
@@ -205,6 +209,7 @@
 }
 .advantage__paragraph {
   width: 270px;
+  height: none;
 }
 .advantage__img {
   width: 270px;
@@ -238,15 +243,18 @@
 
 .images__container {
   position: relative;
-}
-.images__tecnology {
   width: 370px;
   height: 294px;
 }
+.images__tecnology {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .images__text {
-  position: absolute;
-  bottom: 4px;
   width: 100%;
+  height: none;
+  position: absolute;
+  bottom: 0px;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
@@ -264,7 +272,7 @@
   flex-wrap: wrap;
   padding-top: 5%;
 }
-.enginner__person {
+.enginner__features {
   border: rgba(162, 170, 166, 0.658) solid 1px;
   border-radius: 0px 0px 4px 4px;
   margin: 5px;
@@ -272,6 +280,7 @@
 }
 .enginner__image {
   width: 270px;
+  height: none;
 }
 .enginner__title {
   text-align: center;
@@ -298,8 +307,9 @@
   padding: 5%;
 }
 .network__base:hover {
-  fill: #F5F4FA;
   background-color: #2196F3;
+  fill: #F5F4FA;
+  color: none;
   border-radius: 50%;
 }
 .network__icon {
@@ -309,6 +319,7 @@
 
 .footer__base {
   width: 44px;
+  height: 44px;
   text-align: center;
   padding: 5%;
 }
@@ -319,10 +330,10 @@
   padding: 5% 0%;
 }
 .customer__box {
-  border: 1px solid #AFB1B8;
-  fill: #757575;
   width: 170px;
   height: 81px;
+  border: 1px solid #AFB1B8;
+  fill: #757575;
   text-align: center;
   border-radius: 4px;
   margin: 1%;
@@ -356,8 +367,9 @@
   cursor: pointer;
 }
 .button__portaf:hover {
-  color: #F5F4FA;
   background-color: #2196F3;
+  fill: none;
+  color: #F5F4FA;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -380,11 +392,13 @@
 }
 .publicity--img {
   width: 100%;
+  height: none;
   border-radius: 0px 0px 4px 4px;
 }
 .publicity__text {
-  position: absolute;
   width: 100%;
+  height: none;
+  position: absolute;
   top: 1px;
   color: #F5F4FA;
   display: flex;
@@ -415,10 +429,12 @@
 }
 
 .box--hidden {
+  width: none;
   height: 298.3px;
 }
 
 .paragraph--hidden {
+  width: none;
   height: 298px;
   background: rgba(33, 150, 243, 0.9);
   padding: 30% 10%;
@@ -497,8 +513,8 @@
 }
 
 .form_input {
-  height: 40px;
   width: 100%;
+  height: 40px;
   cursor: pointer;
   padding: 2% 2% 2% 7%;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -541,12 +557,12 @@
 }
 
 .form_submit {
+  width: 200px;
+  height: 50px;
   background: #188CE8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-  width: 200px;
-  height: 50px;
   margin: auto;
   color: #F5F4FA;
   font-family: "Roboto";
